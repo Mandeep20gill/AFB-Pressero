@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <form class="form-horizontal" id="serverDetailForm" [formGroup]="serverDetailForm" (ngSubmit)="onClickSave(serverDetailForm.value)">
+            <h2 class="is-center content-subhead">{{pageTitle}}</h2>
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">uProduce Server <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="API Server" class="form-control" formControlName="uProduceServer">
+                        <span class="help-block redSign" *ngIf="!serverDetailForm.controls.uProduceServer.valid && (!serverDetailForm.controls.uProduceServer.pristine || submitted)">uProduce Server is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Username <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="Server Username" class="form-control" formControlName="uProduceUsername">
+                        <span class="help-block redSign" *ngIf="!serverDetailForm.controls.uProduceUsername.valid && (!serverDetailForm.controls.uProduceUsername.pristine || submitted)">uProduce Username is required.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Password <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="password" placeholder="Server Password" class="form-control" formControlName="uProducePassword">
+                        <span class="help-block redSign" *ngIf="!serverDetailForm.controls.uProducePassword.valid && (!serverDetailForm.controls.uProducePassword.pristine || submitted)">uProduce Password is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-6">
+                        <button type="submit" [disabled]="!serverDetailForm.valid"  class="btn btn-primary">Test and Save</button>
+                        <!--<button type="button" class="btn btn-primary" (click)="onClickTest()">Test  and Server</button>-->
+                        <button type="button" class="btn btn-primary" (click)="onClickBack()">Back</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

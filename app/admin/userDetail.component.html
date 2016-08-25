@@ -1,0 +1,101 @@
+﻿
+<div class="container">
+    <div class="jumbotron">
+        <form class="form-horizontal" id="userDetailForm" [formGroup]="userDetailForm" (ngSubmit)="onClickCreate(userDetailForm.value)">
+            <h2 class="is-center content-subhead">{{pageTitle}}</h2>
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Name <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="Name" class="form-control" formControlName="Name">
+                        <span class="help-block redSign" *ngIf="!userDetailForm.controls.Name.valid && (!userDetailForm.controls.Name.pristine || submitted)">Name is required.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Login Username <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input id="username" type="text" placeholder="Username" class="form-control" formControlName="Username">
+                        <span class="help-block redSign" *ngIf="!userDetailForm.controls.Username.valid && (!userDetailForm.controls.Username.pristine || submitted)">Username is required.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Password <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" formControlName="Password" placeholder="Password">
+                        <span class="help-block redSign" *ngIf="!userDetailForm.controls.Password.valid && (!userDetailForm.controls.Password.pristine || submitted)">Password is required.</span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Confirm Password <span class="redSign">*</span></label>
+                    <div class="col-sm-6">
+                        <input id="confirmpassword" type="password" placeholder="Confirm Password" formControlName="confirmPassword"
+                               class="form-control">
+                        <span class="help-block redSign" *ngIf="!userDetailForm.controls.confirmPassword.valid && (!userDetailForm.controls.confirmPassword.pristine || submitted)">Confirm Password is required.</span>
+                    </div>
+                </div>
+               
+                 <div class="form-group">
+                    <label class="col-sm-3 control-label">uProduce Server</label>
+                    <div class="col-sm-6">
+                        <select formControlName="uProduceId" class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+                            <option *ngFor="let userver of servers" value={{userver.Id}}>
+                                {{userver.uProduceServer}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-6">
+                        <button type="submit" [disabled]="!userDetailForm.valid"  class="btn btn-primary">{{SubmitText}}</button>
+                        <button type="button" class="btn btn-primary" (click)="onClickDelete(userDetailForm.value)" *ngIf="ShowDelete">Delete</button>
+                        <button type="button" class="btn btn-primary" (click)="onClickActivate(userDetailForm.value)" *ngIf="ShowActivate">Activate</button>
+                        <button type="button" class="btn btn-primary" (click)="onClickBack()">Back</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <!--<form class="pure-form  pure-form-aligned" id="ServerInfo" *ngIf="ShowServerInfo" (ngSubmit)="onClickSave()">
+            <fieldset>
+                <legend> Server Information </legend>
+                <div class="pure-control-group">
+                    <label for="name">API Server IP <span class="redSign">*</span></label>
+                    <input id="name" type="text" placeholder="API Server" required maxlength="50" class="pure-input" [(ngModel)]="user.uProduceServer">
+                </div>
+                <div class="pure-control-group">
+                    <label for="username">Username <span class="redSign">*</span></label>
+                    <input id="username" type="text" placeholder="Username" required maxlength="50" class="pure-input" [(ngModel)]="user.uProduceUsername">
+                </div>
+                <div class="pure-control-group">
+                    <label for="password">Password <span class="redSign">*</span></label>
+                    <input id="password" type="password" placeholder="Password" required maxlength="50" class="pure-input" maxlength="20" [(ngModel)]="user.uProducePassword">
+
+                </div>
+                <div class="pure-controls space-bottom">
+                    <a href="#">Test uproduce Server</a>
+                </div>
+                <div class="pure-control-group">
+                    <label for="NwPath">N/W Path </label>
+                    <input id="NwPath" type="text" placeholder="Network Path" maxlength="50" class="pure-input" [(ngModel)]="user.NwPath">
+                </div>
+                <div class="pure-control-group">
+                    <label for="NwPath">N/W Username</label>
+                    <input id="NwPath" type="text" placeholder="Network Username" maxlength="50" class="pure-input" [(ngModel)]="user.NwUsername">
+                </div>
+                <div class="pure-control-group">
+                    <label for="NwPath">N/W Password </label>
+                    <input id="NwPath" type="text" placeholder="Network Password" maxlength="50" class="pure-input" [(ngModel)]="user.NwPassword">
+                </div>
+                <div class="pure-controls">
+                    <button type="button" *ngIf="showBack" class="pure-button" (click)="onClickBack()">Back</button>
+                    <button type="button" *ngIf="!showBack" class="pure-button" (click)="onClickDelete()">Delete</button>
+                    <button type="submit" class="pure-button">Save</button>
+                </div>
+            </fieldset>
+        </form>-->
+
+    </div>
+</div>
+
+

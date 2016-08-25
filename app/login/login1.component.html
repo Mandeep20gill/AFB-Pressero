@@ -1,0 +1,80 @@
+﻿<nav id="myNavbar" class="navbar navbar-default navbar-inverse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse" (onClick)="navbarCollapsed = !navbarCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>-->
+            <a class="navbar-brand" href="#">Alliance Franchise Brands</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!--<div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">Home</a></li>
+                <li><a href="http://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
+                <li><a href="http://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
+            </ul>
+        </div>-->
+    </div>
+</nav>
+<div class="container">
+    <div class="jumbotron">
+        <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onClickLogin(loginForm.value)">
+            <h2 class="is-center content-subhead">Login</h2>
+            <div class="form-group">
+
+                <label class="col-sm-3 control-label" for="inputSuccess">Username  <i class="glyphicon glyphicon-user"></i> <span class="redSign"> *</span></label>
+
+                <div class="col-sm-6">
+
+                    <input type="text" class="form-control" formControlName="Username" placeholder="Username">
+
+                    <span class="help-block redSign" *ngIf="! loginForm.controls.Username.valid && (!loginForm.controls.Username.pristine || submitted)">Username is required.</span>
+
+                </div>
+            </div>
+            <div class="form-group">
+
+                <label class="col-sm-3 control-label">Password <i class="glyphicon glyphicon-lock"></i> <span class="redSign">*</span></label>
+
+                <div class="col-sm-6">
+
+                    <input type="password" class="form-control" formControlName="Password" placeholder="Password">
+
+                    <span class="help-block redSign" *ngIf="!loginForm.controls.Password.valid && (!loginForm.controls.Password.pristine || submitted)">Password is required.</span>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"  formControlName="RememberMe"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+<div class="navbar navbar-default navbar-inverse">
+    <div class="container-fluid">
+        <footer>
+            <p>&copy; Copyright 2013 Alliance Franchise Brands</p>
+        </footer>
+    </div>
+</div>

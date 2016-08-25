@@ -1,0 +1,62 @@
+.redSign {
+    color: #a94442;
+    font-size: 12px;
+}
+
+.gridview {
+    text-align: left;
+}
+
+.is-middle {
+    vertical-align: middle;
+}
+
+.is-center {
+    text-align: center;
+}
+
+.ng-valid[required] {
+    border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+    border-left: 5px solid #a94442; /* red */
+}
+/* This is the class used for the footer */
+footer {
+    background: #2d3e50;
+    color: #9d9d9d;
+    width: 100%;
+    min-height: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar-nav {
+    float: right;
+}
+/* This is the class used for the content sub-headers (<h3>) */
+.content-subhead {
+    color: #337ab7;
+}
+ .content-subhead i {
+        margin-right: 7px;
+    }
+
+.l-box {
+    padding: 1em;
+}
+
+.padding-10px {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.inActiveUser{color:#a94442;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+{
+    background-color:#eee;
+}
+.alertify.alertPopup
+{
+    color:#a94442;
+}

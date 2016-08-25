@@ -1,0 +1,38 @@
+﻿
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+        <li class="nav" data-toggle="tab"><a routerLink="/manage/users">Manage Users</a></li>
+        <li class="nav active" data-toggle="tab"><a>Manage Servers <span class="badge">{{Servers.length}}</span></a></li>
+    </ul>
+    <div class="jumbotron padding-10px">
+        <form class="form-horizontal">
+            <h2 class="is-center content-subhead">Manage Servers</h2>
+            <div class="form-group">
+                <div class="col-sm-1">
+                    <button type="button" class="btn btn-primary" (click)="onClickCreateServer()">
+                        <i class="glyphicon glyphicon-plus"></i>Server
+                    </button>
+                </div>
+                <div class="col-sm-4"> <input type="text" class="form-control" placeholder="Search server" #txtSearch (keyup)="onKeyupSearchServer(txtSearch.value)"></div>
+            </div>
+            <div class="form-group">
+                <div class="l-box col-xs-12 col-sm-6 col-md-3" *ngFor="let server of Servers">
+                    <div Class="gridview">
+                        <h4 class="content-subhead">
+                            <i class="glyphicon glyphicon-home"></i>{{server.uProduceServer}}
+                        </h4>
+                        <div class="pure-control-group">
+                            <label for="Username"><i class="glyphicon glyphicon-user"></i> Username: </label> {{server.uProduceUsername}}
+                        </div>
+        
+                        <div class="pure-control">
+                            <button type="button" class="btn btn-primary" (click)="onClickEditServer(server)">
+                                <i class="glyphicon glyphicon-edit"></i> Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
